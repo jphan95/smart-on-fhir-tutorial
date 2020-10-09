@@ -72,7 +72,6 @@
     }
     console.log(FHIR);
     console.log(FHIR.oath2);
-    console.log(FHIR.oath2.ready)
     FHIR.oauth2.ready(onReady, onError);
     return ret.promise();
 
