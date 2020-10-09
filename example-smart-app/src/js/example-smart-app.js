@@ -9,6 +9,7 @@
 
     function onReady(smart)  {
       if (smart.hasOwnProperty('patient')) {
+        console.log(smart)
         var patient = smart.patient;
         console.log(patient);
         var pt = patient.read();
@@ -29,7 +30,8 @@
         $.when(pt, obv).done(function(patient, obv) {
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
-
+          console.log(patient);
+          console.log(obv)
           var fname = '';
           var lname = '';
 
@@ -68,7 +70,9 @@
         onError();
       }
     }
-
+    console.log(FHIR);
+    console.log(FHIR.oath2);
+    console.log(FHIR.oath2.ready)
     FHIR.oauth2.ready(onReady, onError);
     return ret.promise();
 
